@@ -12,7 +12,11 @@ element = soup.find("li", {
     "itemprop": "price",
     "content": "34.99"
 })
-print(element.text)
+string_price = element.text
+
+price_without_symbol = string_price[1:]
+
+print("This tent costs: {}".format(float(price_without_symbol)))
 
 
 
