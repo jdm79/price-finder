@@ -14,9 +14,16 @@ element = soup.find("li", {
 })
 string_price = element.text
 
-price_without_symbol = string_price[1:]
+budget = 30
+price = float(string_price[1:])
 
-print("This tent costs: {}".format(float(price_without_symbol)))
+if price < budget:
+    print("This tent is less than £30 - buy it!")
+else:
+    print("This tent is too damn expensive!")
+    # else
+    # print("This tent is too expensive. stand down, soldier.")
+
 
 
 
