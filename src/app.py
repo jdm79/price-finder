@@ -2,6 +2,13 @@ import requests
 from bs4 import BeautifulSoup
 
 def webscraper():
+
+    # sometimes you need to add a header (like below) to fool the website
+    # into thinking the scraper is a browser
+    #
+    # request = requests.get("https://www.argos.co.uk/product/8838047", headers={
+    #     'User-agent': 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:61.0) Gecko/20100101 Firefox/61.0'})
+
     url = "https://www.argos.co.uk/product/8838047"
     html_snippet = {
         "class": "price product-price-primary",
@@ -21,8 +28,6 @@ def webscraper():
         print("This tent is less than £30 - buy it!")
     else:
         print("This tent is too damn expensive!")
-        # else
-        # print("This tent is too expensive. stand down, soldier.")
 
 webscraper()
 
